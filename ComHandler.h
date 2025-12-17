@@ -1,15 +1,11 @@
-//
-// Created by SACHAKAMEN on 12/15/2025.
-//
-
-#ifndef PARA5_COMHANDLER_H
-#define PARA5_COMHANDLER_H
-#include <windows.h>
+#ifndef RLYEH_COMHANDLER_H
+#define RLYEH_COMHANDLER_H
 #include <iostream>
+#include <vector>
+#include <windows.h>
 #include <QObject>
 #include <qobjectdefs.h>
-#include <vector>
-#include <thread>
+
 
 
 class MainWidget;
@@ -20,15 +16,15 @@ public:
     ComHandler();
     void LinkWindow(MainWidget &widget);
     bool SetPort(std::string &port);
-    void StopRead();
     void StartRead();
+    void StopRead();
 
 signals:
     void packageReceived(QString string);
 private:
 
     HANDLE _com_port;
-    DCB _dcbSerialParams;
+    DCB _dcb_serial_params;
     std::vector<unsigned char> _buffer;
     DWORD _red_bytes;
     COMMTIMEOUTS _timeouts;
@@ -38,4 +34,4 @@ private:
 };
 
 
-#endif //PARA5_COMHANDLER_H
+#endif

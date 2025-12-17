@@ -1,9 +1,6 @@
-//
-// Created by SACHAKAMEN on 12/15/2025.
-//
-
 #include "BindWidget.h"
 #include <iostream>
+
 
 void BindWidget::onSetClicked() {
     emit SetClicked();

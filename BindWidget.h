@@ -1,9 +1,5 @@
-//
-// Created by SACHAKAMEN on 12/15/2025.
-//
-
-#ifndef R_LYEH_BINDWIDGET_H
-#define R_LYEH_BINDWIDGET_H
+#ifndef RLYEH_BINDWIDGET_H
+#define RLYEH_BINDWIDGET_H
 #include <QPushButton>
 #include <QLineEdit>
 #include <QVBoxLayout>
