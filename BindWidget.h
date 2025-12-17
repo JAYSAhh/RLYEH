@@ -18,6 +18,8 @@ private slots:
     void onSetClicked();
     void onPortChanged();
 private:
+    void initUI();
+    void setConnections();
     QLineEdit *_lineEdit;
     QPushButton *_setButton;
     QHBoxLayout *_layout;
@@ -25,4 +27,4 @@ private:
 };
 
 
-#endif //R_LYEH_BINDWIDGET_H
+#endif

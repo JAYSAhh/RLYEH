@@ -50,9 +50,9 @@ void MainWidget::initUI(int &height, int &weight) {
     _log_box->setFixedHeight(300);
     _log_box->setReadOnly(true);
 
-    _start_button->setObjectName("start");
-    _stop_button->setObjectName("stop");
-    _clear_button->setObjectName("clear");
+    _start_button->setStyleSheet(QString("QPushButton{background-color:#cbf078;color:white}QPushButton:hover{background-color:white;color:black}"));
+    _stop_button->setStyleSheet(QString("QPushButton{background-color:#e46161;color:white}QPushButton:hover{background-color:white;color:black}"));
+    _clear_button->setStyleSheet(QString("QPushButton{background-color:#61c0bf;color:white}QPushButton:hover{background-color:white;color:black}"));
 
     _layout->addWidget(_bind);
     _layout->addWidget(_start_button);
@@ -64,7 +64,7 @@ void MainWidget::initUI(int &height, int &weight) {
     this->setWindowIcon(QIcon(":/love.ico"));
     this->setFixedHeight(height);
     this->setFixedWidth(weight);
-    const QString sheet= "BindWidget{margin:0} #clear{background-color:#385170}   *{margin:0;font-size:20px;position:flex} MainWidget{background-color:#ececec;}QPushButton{margin-left:10px;margin-right:10px;color:white;border-radius:5px;height:50px;border:2px solid;border-color:#142d4c;}QLineEdit{height:60px;border:2px solid;border-radius:5px} #stop{background-color:#DC143C}#start{background-color:#9fd3c7}";
+    const QString sheet= "BindWidget{margin:0} *{margin:0;font-size:20px;position:flex} QPushButton:hover{background-color:white;color:black} MainWidget{background-color:#ececec;}QPushButton{margin-left:10px;margin-right:10px;color:white;border-radius:5px;height:50px;border:2px solid;border-color:#142d4c;}QLineEdit{height:60px;border:2px solid;border-radius:5px}";
 
     this->setStyleSheet(sheet);
 }

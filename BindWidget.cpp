@@ -11,6 +11,10 @@ void BindWidget::onPortChanged() {
 }
 
 BindWidget::BindWidget(QWidget *parent): QWidget(parent) {
+    initUI();
+    setConnections();
+}
+void BindWidget::initUI() {
     _lineEdit = new QLineEdit(this);
     _lineEdit->setPlaceholderText("COM PORT");
     _setButton =new QPushButton("SET",this);
@@ -19,13 +23,17 @@ BindWidget::BindWidget(QWidget *parent): QWidget(parent) {
     _layout->addWidget(_setButton);
     _layout->addWidget(_lineEdit);
 
-
-    connect(_setButton,&QPushButton::clicked,this,&BindWidget::onSetClicked);
-    connect(_lineEdit,&QLineEdit::textChanged,this,&BindWidget::onPortChanged);
-
-    _setButton->setObjectName("set");
+    _setButton->setStyleSheet(QString("QPushButton{background-color:#61c0bf;color:white}QPushButton:hover{background-color:white;color:black}"));
 
     this->setFixedHeight(60);
-    this->setStyleSheet(QString("QPushButton{width:100px;margin-left:0px}QLineEdit{height:50px;margin-right:0px}#set{background-color:#385170}"));
+    this->setStyleSheet(QString("QPushButton{width:100px;margin-left:0px}QLineEdit{height:50px;margin-right:0px}"));
+
 }
+
+void BindWidget::setConnections() {
+    connect(_setButton,&QPushButton::clicked,this,&BindWidget::onSetClicked);
+    connect(_lineEdit,&QLineEdit::textChanged,this,&BindWidget::onPortChanged);
+}
+
+
 
