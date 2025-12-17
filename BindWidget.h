@@ -1,0 +1,32 @@
+//
+// Created by SACHAKAMEN on 12/15/2025.
+//
+
+#ifndef R_LYEH_BINDWIDGET_H
+#define R_LYEH_BINDWIDGET_H
+#include <QPushButton>
+#include <QLineEdit>
+#include <QVBoxLayout>
+#include <QWidget>
+
+
+
+class BindWidget:public QWidget {
+    Q_OBJECT
+public:
+    explicit  BindWidget (QWidget *parent = nullptr);
+signals:
+    void SetClicked();
+    void PortChanged(std::string &port);
+private slots:
+    void onSetClicked();
+    void onPortChanged();
+private:
+    QLineEdit *_lineEdit;
+    QPushButton *_setButton;
+    QHBoxLayout *_layout;
+    std::string _port;
+};
+
+
+#endif //R_LYEH_BINDWIDGET_H
